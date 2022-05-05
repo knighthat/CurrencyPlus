@@ -1,0 +1,8 @@
+name: CurrencyPlus
+version: '${project.version}'
+main: me.knighthat.plugin.CurrencyPlus
+api-version: 1.14
+prefix: Currency Plus
+authors: [ KnightHat ]
+description: Adding functional currency to your server
+website: https://github.com/knighthat
