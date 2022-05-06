@@ -1,4 +1,4 @@
-package me.knighthat.local;
+package me.knighthat.vault;
 
 import lombok.NonNull;
 import me.knighthat.plugin.CurrencyPlus;
@@ -7,15 +7,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataType;
 
 public class ContainerStorage implements StorageImpl {
-
-    private final CurrencyPlus plugin;
-
+    
     private final @NonNull NamespacedKey key;
     private final @NonNull PersistentDataType<Double, Double> type = PersistentDataType.DOUBLE;
 
     public ContainerStorage(CurrencyPlus plugin) {
 
-        this.plugin = plugin;
         this.key = new NamespacedKey(plugin, "CurrencyPlus_LOCAL");
     }
 
@@ -46,7 +43,7 @@ public class ContainerStorage implements StorageImpl {
     @Override
     public double get(@NonNull Player target) {
 
-        if (!hasBank(target))
+        if (hasBank(target))
             return target.getPersistentDataContainer().get(key, type);
 
         return 0d;

@@ -62,6 +62,13 @@ public abstract class PluginFiles {
         }
     }
 
+    public @NonNull FileConfiguration get() {
+
+        if (yaml == null) reload();
+
+        return yaml;
+    }
+
     private void createIfNotExists() {
 
         if (file == null)

@@ -1,0 +1,11 @@
+# How money should  be displayed. Where {0} is the currency symbol and {1} is the amount
+format: "{0}{1}"
+fractional-digits: 2  # $.00
+singular: "$"
+plural: "$"
+
+# /[pay, transfer, wire] command.
+# Additional fee for each team the command is executed
+# Anyone with "currencyplus.tax.bypass" will not pay this fee
+transfer-fee: 10  # Percent (%)
+

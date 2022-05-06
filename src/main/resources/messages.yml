@@ -1,0 +1,35 @@
+prefix: "&7[&6Currency &bPlus&f] "
+
+reload: "&2All files are reloaded!"
+player-only: "&cOnly player can perform this action!"
+
+no-permission: "&cYou don''t have permission to do this!"
+player-not-exists: "&cCouldn''t find anyone with that name!"
+
+# Balance command
+# %player to show player's registered name
+# %display to show player's nickname
+self-balance: "&bYour balance is: &a%balance"
+player-balance: "&b%player''s balance is: &a%balance"
+
+not-a-number: "%input &cis not a proper number!"
+below-zero: "&cGiven amount must be greater than 0! (%input)"
+
+give-command:
+  sender: "&aYou sent &r%player &5%amount"
+  recipient: "&bYou received &5%amount &bfrom &r%executor"
+
+take-command:
+  balance-insufficient: "%player doesn''t have enough money"
+  sender: "&aYou took &5%amount &afrom &r%player"
+  recipient: "&5%amount &cwas taken from you by &r%executor"
+
+set-command:
+  sender: "%player&a''s balance is set to: &5%amount"
+  recipient: "&cYour balance is set to: &5%amount &cby &r%executor"
+
+pay-command:
+  no-self-pay: "&cYou can''t pay money to yourself!"
+  balance-insufficient: "&cYou don''t have enough money to transfer"
+  sender: "&dTransaction of &6%amount &dwith &b%tax% &dfee is completed! (Total: %total)"
+  recipient: "%executor &dsent you &6%amount&d, transaction is completed!"

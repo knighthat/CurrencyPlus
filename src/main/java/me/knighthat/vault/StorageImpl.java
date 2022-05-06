@@ -1,4 +1,4 @@
-package me.knighthat.local;
+package me.knighthat.vault;
 
 import lombok.NonNull;
 import org.bukkit.entity.Player;
@@ -12,4 +12,7 @@ public interface StorageImpl {
     void set(@NonNull Player target, double amount);
 
     double get(@NonNull Player target);
+
+    default void update() {
+    }
 }

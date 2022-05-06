@@ -1,16 +1,28 @@
-package me.knighthat.local;
+package me.knighthat.vault;
 
 import lombok.NonNull;
 import me.knighthat.files.PlayerData;
 import me.knighthat.plugin.CurrencyPlus;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class FileStorage implements StorageImpl {
 
     private final @NonNull PlayerData data;
 
     public FileStorage(CurrencyPlus plugin) {
+
         this.data = new PlayerData(plugin);
+
+        long anHour = 20 * 60 * 60;
+        new BukkitRunnable() {
+
+            @Override
+            public void run() {
+
+                update();
+            }
+        }.runTaskTimer(plugin, anHour, anHour);
     }
 
 
@@ -41,5 +53,10 @@ public class FileStorage implements StorageImpl {
     @Override
     public double get(@NonNull Player target) {
         return data.read(target);
+    }
+
+    @Override
+    public void update() {
+        data.update();
     }
 }
